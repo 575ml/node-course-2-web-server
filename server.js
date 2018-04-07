@@ -51,18 +51,25 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
 	res.render('index', {
 		pageTitle: 'Home',
-		welcomeMessage: 'Welcome to The Web Server'
+		welcomeMessage: 'A\'s Random Bits and Pieces'
 	})
 });
 
-//ABOUT
-app.get('/about', (req, res) => {
-	res.render('about', {
-		pageTitle: 'About'
+//CONTACT
+app.get('/contact', (req, res) => {
+	res.render('contact', {
+		pageTitle: 'Need something?'
 	});
 });
 
+//PROJECT
+app.get('/projects', (req, res) => {
+	res.render('projects', {
+		pageTitle: 'Projects'
+	})
+});
 
+//404
 app.get('/bad', (req, res) => {
 	res.send({
 		errorMessage: 'Error'
