@@ -5,9 +5,11 @@ const express = require('express'),
 	  //server  = require('http').createServer(app),
 	  //io      = require('socket.io')(server);
 
+const port = process.env.PORT || 5000;
+
 //APP
 app.set('view engine', 'hbs');
-app.set('port', (process.env.PORT || 5000));
+//app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 //LOG REQUEST TO /server.log'
@@ -67,6 +69,6 @@ app.get('/bad', (req, res) => {
 	})
 })
 
-app.listen(app.get('port'), () => {
-	console.log('App init on poty', app.get('port'));
+app.listen(port, () => {
+	console.log(`Server init on poty ${port}`);
 });
